@@ -24,7 +24,12 @@ function Header() {
     span2.classList.add('temp');
     span2.textContent = '98°'
 
-    
+    div.appendChild(span);
+    div.appendChild(h1);
+    div.appendChild(span2);
+
+    let headerSection = document.querySelector('.header-container');
+    headerSection.appendChild(div);
 
     return div
 }
