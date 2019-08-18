@@ -9,4 +9,11 @@
 //  </div >
 // And add it to the DOM in the .headerContainer component
 
-function Header() {}
+function Header() {
+    var div = document.createElement('div');
+    div.classList.add('header');
+
+    return div
+}
+
+Header();
