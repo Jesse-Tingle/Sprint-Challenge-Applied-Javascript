@@ -20,6 +20,10 @@ function Header() {
     let h1 = document.createElement('h1');
     h1.textContent = 'Lambda Times';
 
+    let span2 = document.createElement('span');
+    span2.classList.add('temp');
+    span2.textContent = '98°'
+
     
 
     return div
