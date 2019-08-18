@@ -13,6 +13,10 @@ function Header() {
     var div = document.createElement('div');
     div.classList.add('header');
 
+    let span = document.createElement('span');
+    span.classList.add('date');
+    span.textContent = 'SMARCH 28, 2019';
+
     return div
 }
 
