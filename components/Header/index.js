@@ -15,7 +15,7 @@ function Header() {
 
     let span = document.createElement('span');
     span.classList.add('date');
-    span.textContent = 'SMARCH 28, 2019';
+    span.textContent = 'MARCH 28, 2019';
 
     let h1 = document.createElement('h1');
     h1.textContent = 'Lambda Times';

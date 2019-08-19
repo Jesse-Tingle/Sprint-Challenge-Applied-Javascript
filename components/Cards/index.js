@@ -1,7 +1,7 @@
 // STEP 3: Create Article cards.
 // -----------------------
 // Send an HTTP GET request to the following address: https://lambda-times-backend.herokuapp.com/articles
-// Stduy the response data you get back, closely.
+// Study the response data you get back, closely.
 // You will be creating a component for each 'article' in the list.
 // This won't be as easy as just iterating over an array though.
 // Create a function that will programmatically create the following DOM component:
@@ -23,49 +23,20 @@ let cardsContainer = document.querySelector('.cards-container');
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
     .then((response) => {
         BootstrapArray = response.data.articles.bootstrap;
-        BootstrapArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
-    })
-    .catch((error) => {
-        console.log('bootstrap', error);
-    })
-
-
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((response) => {
         JavaScriptArray = response.data.articles.javascript;
-        JavaScriptArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
-    })
-    .catch((error) => {
-        console.log('javascript', error);
-    })
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((response) => {
         JQueryArray = response.data.articles.jquery;
-        JQueryArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
-    })
-    .catch((error) => {
-        console.log('jquery', error);
-    })
-
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((response) => {
         NodeArray = response.data.articles.node;
-        NodeArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
-    })
-    .catch((error) => {
-        console.log('node', error);
-    })
-
-axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then((response) => {
         TechnologyArray = response.data.articles.technology;
+
+        BootstrapArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
+        JavaScriptArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
+        JQueryArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
+        NodeArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
         TechnologyArray.forEach((e) => cardsContainer.appendChild(cardCreator(e)));
+        
     })
     .catch((error) => {
-        console.log('node', error);
+        console.log(error);
     })
 
 
