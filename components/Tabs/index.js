@@ -9,13 +9,22 @@
 //    <div class="tab">topic here</div>
 
 
+let tabSection = document.querySelector('.tab');
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+    .then((response) => {
+        tabArray = response.data.topics;
+        tabArray.forEach((e) => tabSection.appendChild())
 
-// let ax = axios.get('https://lambda-times-backend.herokuapp.com/topics');
-// let git = axios.get('https://api.github.com/users/Jesse-Tingle')
-// console.log(ax);
-// console.log(git);
+        // JavaScriptArray = response.data.topics.javascript;
+        // JavaScriptArray.forEach((e) => tabSection.appendChild(TabCreator(e)));
+    })
+    .catch((error) => {
+        console.log('javascript', error);
+    })
 
-// let tabSection = document.querySelector('.tabs');
+
+
+
 // let tabArray = [];
 // axios.get('https://lambda-times-backend.herokuapp.com/topics')
 //     .then(topics => {
@@ -25,11 +34,12 @@
 //     });
 //     })
 
-// function TabCreator() {
-//     let tabDiv = document.createElement('div');
-//     tabDiv.classList.add('tab');
+function TabCreator(data) {
+    let tabDiv = document.createElement('div');
+    tabDiv.classList.add('tab');
+    tabDiv.textContent = data;
 
-//     return tabDiv;
-// }
+    return tabDiv;
+}
 
 // console.log(TabCreator());
